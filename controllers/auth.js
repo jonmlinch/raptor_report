@@ -45,17 +45,20 @@ router.post('/signup', function(req, res){
 			res.redirect('/profile')
 		} else { //user messed up, they already have a login
 			//TODO: send user an error message!
-			console.log('NOT WORKING', wasCreated)
+			req.flash('error', 'Please login')
 			res.redirect('/auth/login');
 
 		}
 	}).catch(function(err){
-		res.send(err);
+		req.flash('error', err.message);
+		res.redirect('/auth/signup');
 	});
 });
 
 router.get('/logout', function(req, res){
-	res.send('logout page')
+	req.logout();
+	req.flash('success', 'Successfully logged out');
+	res.redirect('/');
 })
 
 module.exports = router;

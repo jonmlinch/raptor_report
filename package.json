@@ -1,7 +1,8 @@
 {
   "name": "auth-boiler-plate",
   "version": "1.0.0",
-  "description": "",
+  "description": "Identify bird with eBirds",
+  "repository": "https://github.com/jonmlinch/auth-boiler-plate.git",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

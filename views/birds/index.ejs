@@ -1,0 +1,14 @@
+<h1>The Bird Page!</h1>
+
+<% birds.forEach(function(b){%>
+	<div class="card gray lighten-1">
+		<div class="card-title">
+			<%= b.name %> (<%= b.scienctific_name%>)
+		</div>
+		<div class="card-panel">
+			<%= b.notes %>
+			<hr>
+			<p>Seen in <%= b.location %> on <%= b.createdAt %></p>
+		</div>
+	</div>
+<%})%>

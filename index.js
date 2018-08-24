@@ -1,3 +1,6 @@
+//require .env file's variable
+require('dotenv').config();
+
 //add your requires modules
 var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
@@ -14,7 +17,7 @@ app.set('view engine', 'ejs');
 app.use(ejsLayouts);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({
-	secret: 'abc',
+	secret: process.env.SESSION_SECRET,
 	resave: false,
 	saveUninitialized: true
 }));
